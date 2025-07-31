@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #393E42;
+  color: #FFFEFF;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+canvas#particles {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.logo-header {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(57, 62, 66, 0.9);
+}
+
+.logo-img {
+  max-width: 150px;
+  height: auto;
+}
+
+.main-content {
+  padding: 3rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.headline {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #4CE02D;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeSlideDown 1.5s forwards;
+}
+
+.subheadline {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeSlideDown 2s forwards;
+}
+
+.cta-buttons button {
+  background: #4CE02D;
+  color: #393E42;
+  border: 2px solid #4CE02D;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cta-buttons button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #4CE02D, 0 0 40px #4CE02D;
+}
+
+.section {
+  margin-top: 4rem;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1.2s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #FFFEFF;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #4CE02D;
+  box-shadow: 0 0 10px #4CE02D, 0 0 20px #4CE02D;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+ul.services li,
+ul.benefits li,
+.steps div {
+  display: block;
+  margin: 1.2rem 0;
+  padding: 1rem;
+  border: 2px solid #4CE02D;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px #4CE02D, 0 0 10px #4CE02D;
+  background: rgba(57, 62, 66, 0.4);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+ul.services li:hover,
+ul.benefits li:hover,
+.steps div:hover {
+  transform: scale(1.05);
+  box-shadow: inset 0 0 20px #4CE02D, 0 0 20px #4CE02D;
+}
+
+#contactModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #FFFEFF;
+  color: #000;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+#contactModal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.modal-content button[type="submit"] {
+  background-color: #4CE02D;
+  color: #000;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
